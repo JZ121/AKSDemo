@@ -34,6 +34,13 @@ steps:
     Contents: 'dockerProj-1/Dockerfile'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
+
+- task: CopyFiles@2
+  inputs: 
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: 'dockerProj-1/Deployment.yml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
